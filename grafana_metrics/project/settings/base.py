@@ -1,20 +1,32 @@
 import os
 
-
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'k4u-om3e8+l$nfaojkc81)sknupb^uw8nob)=19q98e8d9e(*7'
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'xzs@@)m=zdhaaxq9sc(7yids%)n9d5s%mnd_6lru1k*knf7xa)'
+
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ["*"]
+
+
+# Application definition
 
 INSTALLED_APPS = [
+    'da',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'grafana_metrics',
 ]
 
 MIDDLEWARE = [
@@ -27,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'grafana_metrics.project.urls'
+ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
     {
@@ -45,53 +57,55 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'grafana_metrics.project.wsgi.application'
+WSGI_APPLICATION = 'mysite.wsgi.application'
 
-TEMPLATE_DEBUG = False
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.environ.get(key='DB_NAME', default='da'),
-#         'USER': os.environ.get(key='DB_USER', default='postgres'),
-#         'PASSWORD': os.environ.get(key='DB_PASS', default='postgres'),
-#         'HOST': os.environ.get(key='DB_HOST', default='localhost'),
-#         'PORT': os.environ.get(key='DB_PORT', default=5432),
-#     }
-# }
+
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'database'
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
+
+# Password validation
+# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
+
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation'
-                '.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation'
-                '.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation'
-                '.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation'
-                '.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
-AUTH_TTL = 30
 
-LANGUAGE_CODE = 'ru-RU'
+# Internationalization
+# https://docs.djangoproject.com/en/2.2/topics/i18n/
+
+LANGUAGE_CODE = 'en-us'
+
 TIME_ZONE = 'UTC'
+
 USE_I18N = True
+
 USE_L10N = True
+
 USE_TZ = True
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
