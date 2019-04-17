@@ -1,5 +1,18 @@
 [[package]]
 category = "main"
+description = "Classes Without Boilerplate"
+name = "attrs"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "19.1.0"
+
+[package.source]
+reference = "official"
+type = "legacy"
+url = "https://pypi.python.org/pypi"
+
+[[package]]
+category = "main"
 description = "Python package for providing Mozilla's CA Bundle."
 name = "certifi"
 optional = false
@@ -108,6 +121,39 @@ url = "https://pypi.python.org/pypi"
 
 [[package]]
 category = "main"
+description = "Yet another Python library for Grafana API"
+name = "grafana-api"
+optional = false
+python-versions = "*"
+version = "0.7.0"
+
+[package.dependencies]
+pyyaml = "*"
+requests = "*"
+
+[package.source]
+reference = "official"
+type = "legacy"
+url = "https://pypi.python.org/pypi"
+
+[[package]]
+category = "main"
+description = "Library for building Grafana dashboards"
+name = "grafanalib"
+optional = false
+python-versions = "*"
+version = "0.5.3"
+
+[package.dependencies]
+attrs = "*"
+
+[package.source]
+reference = "official"
+type = "legacy"
+url = "https://pypi.python.org/pypi"
+
+[[package]]
+category = "main"
 description = "WSGI HTTP Server for UNIX"
 name = "gunicorn"
 optional = false
@@ -168,6 +214,19 @@ name = "pytz"
 optional = false
 python-versions = "*"
 version = "2018.9"
+
+[[package]]
+category = "main"
+description = "YAML parser and emitter for Python"
+name = "pyyaml"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "5.1"
+
+[package.source]
+reference = "official"
+type = "legacy"
+url = "https://pypi.python.org/pypi"
 
 [[package]]
 category = "main"
@@ -267,10 +326,11 @@ type = "legacy"
 url = "https://pypi.python.org/pypi"
 
 [metadata]
-content-hash = "fe9dc494dba7f163f5a0e27846685a7354a33d7ffd48c05bbdb5199b4ee38564"
+content-hash = "bb224960a9ac1dc1ca9f3eb308089c34ffe76f2a423dd9ab469e2b707b7dd087"
 python-versions = "^3.7"
 
 [metadata.hashes]
+attrs = []
 certifi = []
 chardet = []
 django = []
@@ -278,11 +338,14 @@ django-admin = []
 django-debug-toolbar = []
 django-excel-response2 = []
 django-six = []
+grafana-api = []
+grafanalib = []
 gunicorn = []
 idna = []
 psycopg2-binary = []
 python-dateutil = []
 pytz = ["32b0891edff07e28efe91284ed9c31e123d84bea3fd98e1f72be2508f43ef8d9", "d5f05e487007e29e03409f9398d074e158d920d36eb82eaf66fb1136b0c5374c"]
+pyyaml = []
 requests = []
 screen = []
 six = []
