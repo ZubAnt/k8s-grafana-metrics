@@ -1,0 +1,38 @@
+venv
+.DS_Store
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+.pytest_cache
+.coverage
+grafana_metrics/project/staticfiles
+
+# PyCharm
+.idea
+.secrets
+
+# Docker volumes
+pgdata
+
+# Sphinx Documentation
+docs/_build/*
+docs/_static/*
+docs/_templates/*
+docs/.doctrees
+!.gitkeep
+
+# Uploads
+static
+
+.dmypy.json
+mediafiles
+.mypy_cache
+builds
+database

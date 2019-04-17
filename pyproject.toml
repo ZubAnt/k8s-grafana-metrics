@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "k8s-grafana-metrics"
+version = "0.1.0"
+description = ""
+authors = ["Zubarev Anton <ya.zubarevanton@yandex.ru>"]
+
+[[tool.poetry.source]]
+name = "official"
+url = "https://pypi.python.org/pypi"
+
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django = "^2.2"
+django-debug-toolbar = "^1.11"
+gunicorn = "^19.8.1"
+psycopg2-binary = "^2.7.5"
+pytz = "^2018.4"
+requests = "^2.18.4"
+python-dateutil = "^2.7.3"
+
+[tool.poetry.dev-dependencies]
+tomlkit = "^0.5.3"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
